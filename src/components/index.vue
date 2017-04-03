@@ -19,16 +19,18 @@
     </div>
     <tag  value="HotNews">
     </tag>
+    
     <div v-for=" item in DONE_HOT_NEWS">
         <indexList :src="item.thumbnail |changeBird" :title="item.title"></indexList>   
     </div>
-  
+    <qyfooter></qyfooter>
 </div>
 </template>
 <script>
     import Header from './Header.vue'
     import indexList from './indexList.vue'
     import tag from './tag.vue'
+    import qyfooter from './footer.vue'
     import {mapGetters} from 'vuex'
 
 
@@ -37,7 +39,8 @@
         components: {
             Header,
             indexList,
-            tag
+            tag,
+            qyfooter
         },
         created(){
             this.getList();
