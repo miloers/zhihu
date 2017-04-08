@@ -21,9 +21,11 @@
     </tag>
     
     <div v-for=" item in DONE_HOT_NEWS">
-        <indexList :src="item.thumbnail |changeBird" :title="item.title"></indexList>   
+        <indexList :src="item.thumbnail |changeBird" :title="item.title" :conurl="item.url"></indexList>   
     </div>
+    
     <qyfooter></qyfooter>
+   
 </div>
 </template>
 <script>
@@ -32,15 +34,13 @@
     import tag from './tag.vue'
     import qyfooter from './footer.vue'
     import {mapGetters} from 'vuex'
-
-
     export default {
         name: 'app',
         components: {
             Header,
             indexList,
             tag,
-            qyfooter
+            qyfooter,        
         },
         created(){
             this.getList();
